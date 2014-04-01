@@ -47,6 +47,13 @@ jQuery.fn.extend({
       
       // Update the state.
       $(this).data("state", 0);
+  },
+
+  ResizeWindowContents: function() {
+    // Get the remaining height on the screen.
+    var viewportHeight = $(window).height();
+
+    $(this).height(viewportHeight - $(".ribbon").height() - $(".title").height() - 29);
   }
 
 });
@@ -54,7 +61,14 @@ jQuery.fn.extend({
 // Make sure the document is loaded and jQuery is available.
 $(document).ready(function() {
 
+  $(".website_contents").ResizeWindowContents();
+
   // Events handlers are placed here.
+
+    // When the window is resized, make sure the div "website_contents" are resized.
+    $(window).on("resize", function() {
+      $(".website_contents").ResizeWindowContents();
+    });
 
     // When you click anywhere on the document, execute the following code.
     $(document).click(function() {
@@ -99,12 +113,14 @@ var OfficeUICore = {
 
     $("li span:first-child").addClass("uppercase");
     $("li[role='tab'] .contents").addClass("absolute");
-    $(".group, .seperator").addClass("relative inline");
+    $(".group, .seperator, .seperator_vertical").addClass("relative inline");
     $(".icongroup, .smallicon .iconlegend, .imageHolder, .menuItem").addClass("inline");
     $(".bigicon").addClass("icon relative inline center");
     $(".smallicon").addClass("icon relative");
     $(".legend, .menu").addClass("absolute");
     $(".arrow").addClass("relative");
+    $(".navigation").addClass("inline");
+    $(".seperator_vertical").addClass("right");
   }
 
 }
