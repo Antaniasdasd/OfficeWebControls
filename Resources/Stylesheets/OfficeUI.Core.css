@@ -9,7 +9,6 @@ body { background-color: #FFF; font-family: 'Segoe UI' }
 .invisible { display: none; }
 .center { text-align: center; }
 .left { float: left; }
-.right { float: right; }
 .inline { display: inline-block; }
 .disabled { opacity: .4; filter: alpha(opacity=40) }
 .uppercase { text-transform: uppercase; }
@@ -17,10 +16,14 @@ body { background-color: #FFF; font-family: 'Segoe UI' }
 
 /* General styling for the OfficeWebControls elements. */
 #OfficeUI { color:#444; font-size: 12px; }
-#OfficeUI > .title { text-align: center; padding-top: 4px; padding-bottom: 4px; height: 17px; }
+#OfficeUI > .title { text-align: center; margin-top: 4px; margin-bottom: 4px; }
 
 /* Commonly used styles. */
 .brd_btm_grey { border-bottom: 1px solid #D4D4D4; }
 .brd_lft_grey { border-left: 1px solid #D4D4D4; }
 .brd_rght_grey { border-right: 1px solid #D4D4D4; }
 .brd_top_grey { border-top: 1px solid #D4D4D4; }
+
+/* Styling for textboxes. */
+input[type=text] { font-family: 'Segoe UI'; font-size: 12px; border: 1px solid #ABABAB; padding: 3px; }
+input[type=text]:hover, input[type=text]:focus { border: 1px solid #92C0E0; }
